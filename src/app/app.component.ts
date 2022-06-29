@@ -16,8 +16,9 @@ export class AppComponent {
   onChangeLength(value : string){
     const parsedvalue = parseInt(value);
     if(!isNaN(parsedvalue)) {
-      this.length=parsedvalue;
+      this.length=parsedvalue;      
     }
+    else {this.length=0};
   }
 
   onChangeUseLetter() {
@@ -41,12 +42,14 @@ export class AppComponent {
 
     let validChars = '';
 
-    if (this.includeLetter){
-      validChars += letters;
-    }
     if (this.includeNumber){
       validChars += numbers;
     }
+
+    if (this.includeLetter){
+      validChars += letters;
+    }
+
     if (this.includeSymbol){
       validChars += symbols;
     }
@@ -58,5 +61,6 @@ export class AppComponent {
       generatePasswords += validChars[index];      
     }
     this.password = generatePasswords;
+    
   }
 }
