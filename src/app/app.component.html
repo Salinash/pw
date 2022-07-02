@@ -38,7 +38,7 @@
       </div>
 
       <button [disabled]="
-          !(length && (includeLetter || includeSymbol || includeNumber))
+          !(length && cantid && (includeLetter || includeSymbol || includeNumber))
         " (click)="onBottonClick()" class="button is-link is-fullwidth">
         Generate!
       </button>
@@ -69,8 +69,8 @@ git push -u origin main
 
 npm install -g angular-cli-ghpages (si no se ha instalado antes)
 
-ngh --dir dist/pw
 ng build --base-href "https://Salinash.github.io/pw/"
+ngh --dir dist/pw
 (despues de estos dos ultimos ya esta publicado buscar pages en settings en Github y sale la url)
 -->
 <!--{{password}} pone en pantalla el valor de password--> 
